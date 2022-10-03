@@ -64,7 +64,7 @@ greeting("Luke")
 */
 
 //CODE HERE
-let compareNums = (num1, num2) => num1 > num2 ? console.log(num1) : console.log(num2)
+let compareNums = (num1, num2) => num1 >= num2 ? console.log(num1) : console.log(num2)
 
 compareNums(1,1)
 ////////////////// PROBLEM 6 ////////////////////
@@ -77,11 +77,11 @@ compareNums(1,1)
 
 //CODE HERE
 function add(num1, num2) {
-  parseInt(num1)
-  parseInt(num2)
-  return (num1 + num2)
+  let x = parseInt(num1)
+  let y = parseInt(num2)
+  return (x + y)
 }
-let sum = add(69, 234)
+let sum = add(69, 69)
 console.log(sum)
 ////////////////// PROBLEM 7 ////////////////////
 
@@ -300,25 +300,37 @@ console.log(emailCheck("ljpassey@gmail.com"))
 */
 
 //CODE HERE
-function frogger
-
+function frogger(amtGold) {
+  let numFrogs = Math.floor(amtGold / 3)
+  console.log(numFrogs)
+}
+totalFrogs = frogger(120)
 ////////////////// PROBLEM 20 ////////////////////
 /*
   You might have noticed a slight bug in the previous problem. If you were to pass in 4 gold, the function would return to you 1.3333... However, you can't really go to a store and by 1.333 products. You would just be able to purchase 1 product. Re-write the function you used in the previous problem (give it the same name, just add a 2 to the end of it) that fixes this bug. Invoke the function and store the returned value to a variable called `totalFrogs2`.
 */
 
 //CODE HERE
-
+totalFrogs2 = frogger(78)
 
 ////////////////// PROBLEM 21 ////////////////////
+
 let sampleArray = [0,1,2,3,4,7,5,6,8,9]
 /*
   Write a function that takes in an array of numbers as an argument. In the body of the function, write logic to determine if the array is in ascending order. The function should return true, if it is sorted in ascending order, false if it is not. Create a variable, `arrayIsAscending` and set it equal to your function invoked. Use the sample array to test this function.
 */
 
 //CODE HERE
-
-
+function arrayUp(array) {
+  for (let i = 0; i < array.length; i++)
+    if (array[i] < array[i + 1]) {
+      return true
+    } else {
+        return false
+    }
+}
+let arrayIsAscending = arrayUp(sampleArray)
+console.log(arrayIsAscending)
 ////////////////// PROBLEM 22 ////////////////////
 
 let duck = "cute";
@@ -333,7 +345,6 @@ function bathroom() {
 function pond() {
   let realDuck = "fluffy";
 }
-
 /*
   There are 4 variables above: duck, rubberDuck, sailorDuck and realDuck.
   All within different scopes.
@@ -341,13 +352,13 @@ function pond() {
 */
 
 //This array should contain the variable names (as strings) accessible in the global scope.
-let globalScope = []
+let globalScope = [duck]
 
 //This array should contain the variable names (as strings) accessible in the bathroom function.
-let bathroomScope = []
+let bathroomScope = [rubberDuck, duck]
 
 //This array should contain the variable names (as strings) accessible in the bathtub function.
-let bathtubScope = []
+let bathtubScope = [sailorDuck, rubberDuck, duck]
 
 //This array should contain the variable names (as strings) accessible in the pond function.
-let pondScope = []
+let pondScope = [realDuck, duck]
